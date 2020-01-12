@@ -31,7 +31,7 @@ class API {
         $response = curl_exec($curl);
         curl_close($curl);
 
-        // Create object from XML response
+        // Create object from XML and convert into assoc array
         $obj = simplexml_load_string($response);
         $json  = json_encode($obj);
         $result = json_decode($json, true);
