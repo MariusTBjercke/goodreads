@@ -6,15 +6,14 @@
  */
 
 class API {
-
     public $key;
+    public $searchResult;
 
     public function __construct($apiKey = null) {
         $this->key = $apiKey;
     }
 
     public function searchBooks($searchString) {
-
         $key = $this->key;
 
         // API key and query parameter
@@ -37,8 +36,20 @@ class API {
         $json  = json_encode($obj);
         $result = json_decode($json, true);
 
+        $this->searchResult = $result;
         return $result;
+    }
 
+    public function getTitle() {
+        $array = $this->searchResult;
+        $result = $array['search']['results']['work']['0']['best_book']['title'];
+        return $result;
+    }
+
+    public function getAuthor() {
+        $array = $this->searchResult;
+        $result = $array['search']['results']['work']['0']['best_book']['author']['name'];
+        return $result;
     }
 
 }

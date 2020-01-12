@@ -7,5 +7,5 @@ $api = new API($key);
 
 $result = $api->searchBooks('lord of the');
 
-echo 'Tittel: ' . $result['search']['results']['work']['0']['best_book']['title'] . '<br>';
-echo 'Forfatter: ' . $result['search']['results']['work']['0']['best_book']['author']['name'];
+echo 'Tittel: ' . $api->getTitle() . '<br>';
+echo 'Forfatter: ' . $api->getAuthor();
