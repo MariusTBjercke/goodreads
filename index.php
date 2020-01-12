@@ -15,11 +15,11 @@ EndOfHtml;
 
 if (isset($_POST['submit'])) {
     $string = $_POST['searchstring'];
-    $result = $api->searchBooks($string);
+    $result = $api->searchBooks($string, 0);
 
-    $title = $api->getTitle(0);
-    $author = $api->getAuthor(0);
-    $imgURL = $api->getImgUrl(0);
+    $title = $api->getTitle();
+    $author = $api->getAuthor();
+    $imgURL = $api->getImgUrl();
 
     $HTML .= <<<EndOfHtml
 <p>Result:</p>

@@ -27,7 +27,7 @@ class API {
         return $result;
     }
 
-    public function searchBooks($searchString) {
+    public function searchBooks($searchString, $int = 0) {
         $key = $this->key;
 
         $data = [
@@ -40,25 +40,26 @@ class API {
 
         $result = $this->handleCurl($finalURL);
 
+        $result = $result['search']['results']['work'][$int]['best_book'];
         $this->searchResult = $result;
         return $result;
     }
 
-    public function getTitle($int = 0) {
+    public function getTitle() {
         $array = $this->searchResult;
-        $result = $array['search']['results']['work'][$int]['best_book']['title'];
+        $result = $array['title'];
         return $result;
     }
 
-    public function getAuthor($int = 0) {
+    public function getAuthor() {
         $array = $this->searchResult;
-        $result = $array['search']['results']['work'][$int]['best_book']['author']['name'];
+        $result = $array['author']['name'];
         return $result;
     }
 
-    public function getImgUrl($int = 0) {
+    public function getImgUrl() {
         $array = $this->searchResult;
-        $result = $array['search']['results']['work'][$int]['best_book']['image_url'];
+        $result = $array['image_url'];
         return $result;
     }
 
