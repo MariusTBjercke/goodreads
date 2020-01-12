@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 <td>$author</td>
 </tr>
 <tr>
-<td><img src="$imgURL"></td>
+<td><img src="$imgURL" alt="$title"></td>
 </tr>
 </table>
 EndOfHtml;
