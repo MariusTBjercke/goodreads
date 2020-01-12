@@ -56,6 +56,12 @@ class API {
         return $result;
     }
 
+    public function getImgUrl($int = 0) {
+        $array = $this->searchResult;
+        $result = $array['search']['results']['work'][$int]['best_book']['image_url'];
+        return $result;
+    }
+
     public function getSeriesByAuthor($authorID) {
         $key = $this->key;
 

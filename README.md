@@ -8,13 +8,15 @@ You can search by using the searchBooks method.
 
 $result = $api->searchBooks('The lord of the');
 
-# Get title and author
+# Get title, author and image
 
-You can receive the title and author name by simply echoing getTitle() and getAuthor() *after* using searchBooks().
+You can receive the title and author name by simply echoing getTitle(), getAuthor() and getImgUrl()*after*using searchBooks().
 You can define the int parameter if you want other results than the first. Default data for int is 0.
 
 **Example:**
 
-$title = $api->getTitle('0');
+$title = $api->getTitle(1);
 
-$author = $api->getAuthor('1');
+$author = $api->getAuthor(0);
+
+$imgURL = $api->getImgUrl();

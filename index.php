@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
 
     $title = $api->getTitle(0);
     $author = $api->getAuthor(0);
+    $imgURL = $api->getImgUrl(0);
 
     $HTML .= <<<EndOfHtml
 <p>Result:</p>
@@ -30,6 +31,9 @@ if (isset($_POST['submit'])) {
 <tr>
 <td class="bold">Author</td>
 <td>$author</td>
+</tr>
+<tr>
+<td><img src="$imgURL"></td>
 </tr>
 </table>
 EndOfHtml;
