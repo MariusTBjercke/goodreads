@@ -9,7 +9,7 @@ $HTML = <<<EndOfHtml
 <p class="bold">Search for a book</p>
 <form method="post" action="">
 <input type="text" name="searchstring" id="searchstring">
-<input type="submit" name="submit" value="Søk">
+<input type="submit" name="submit" value="Search">
 </form>
 EndOfHtml;
 
