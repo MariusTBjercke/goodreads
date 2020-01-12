@@ -2,7 +2,8 @@
 
 include_once('includes/api.php');
 
-$api = new API('hYWVeNPKWjk2QyViID27w');
+$key = 'hYWVeNPKWjk2QyViID27w';
+$api = new API($key);
 
 $result = $api->searchBooks('lord of the');
 

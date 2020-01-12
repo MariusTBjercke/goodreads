@@ -9,11 +9,11 @@ class API {
 
     public $key;
 
-    function __construct($apiKey) {
+    public function __construct($apiKey = null) {
         $this->key = $apiKey;
     }
 
-    function searchBooks($searchString) {
+    public function searchBooks($searchString) {
 
         $key = $this->key;
 
